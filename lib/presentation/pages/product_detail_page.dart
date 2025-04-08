@@ -7,27 +7,47 @@ class ProductDetailPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: Text('Detalle del Producto')),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Producto seleccionado:',
-              style: TextStyle(fontSize: 20),
+      body: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: Center(
+          child: Container(
+            padding: EdgeInsets.all(24),
+            decoration: BoxDecoration(
+              color: Theme.of(context).cardColor,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black26,
+                  blurRadius: 12,
+                  offset: Offset(0, 6),
+                ),
+              ],
             ),
-            SizedBox(height: 20),
-            Text(
-              productName,
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.info_outline, size: 60, color: Theme.of(context).colorScheme.primary),
+                SizedBox(height: 20),
+                Text(
+                  'Producto seleccionado:',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+                SizedBox(height: 16),
+                Text(
+                  productName,
+                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white),
+                ),
+                SizedBox(height: 32),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: Icon(Icons.arrow_back),
+                  label: Text('Volver a la lista'),
+                ),
+              ],
             ),
-            SizedBox(height: 40),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: Text('Volver a la lista'),
-            ),
-          ],
+          ),
         ),
       ),
     );
