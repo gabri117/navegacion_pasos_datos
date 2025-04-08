@@ -1,16 +1,28 @@
-# navegacion_pasos_datos
+# 🛒 Productos App - Flutter
 
-A new Flutter project.
+Esta aplicación simple fue creada como parte de una práctica para aprender sobre la navegación entre pantallas en Flutter utilizando **rutas nombradas** y el **paso de parámetros**.
 
-## Getting Started
+## 📱 Funcionalidades
 
-This project is a starting point for a Flutter application.
+- Pantalla principal con una lista de productos.
+- Navegación a una pantalla de detalle al seleccionar un producto.
+- Paso del nombre del producto como argumento.
+- Pantalla de detalle muestra el nombre y permite volver a la lista.
 
-A few resources to get you started if this is your first Flutter project:
+## 🚀 Navegación entre pantallas
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Se utiliza `Navigator.pushNamed` para navegar y pasar datos:
+```dart
+Navigator.pushNamed(context, '/detail', arguments: productName);
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Y se recuperan en la pantalla de detalle con:
+
+final String productName = ModalRoute.of(context)!.settings.arguments as String;
+
+📂 Estructura del proyecto
+lib/
+├── main.dart
+└── presentation/
+    └── pages/
+        ├── product_list_page.dart
+        └── product_detail_page.dart

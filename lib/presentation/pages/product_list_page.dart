@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class ProductListPage extends StatelessWidget {
+  // Listado de productos de ejemplo
   final List<String> products = [
     'Laptop HP',
-    'Smartphone Samsung',
-    'Tablet Lenovo',
-    'Smartwatch Xiaomi',
-    'Auriculares Sony'
+    'Tarjeta Gráfica NVIDIA',
+    'Audifonos JBL Manos Libres',
+    'RAM Corsair 16GB',
+    'Teclado Mecánico Razer',
+    'Mouse Logitech G502',
   ];
 
   @override
